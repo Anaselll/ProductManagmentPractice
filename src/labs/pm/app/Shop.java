@@ -29,11 +29,14 @@ public class Shop {
 //        System.out.println("p2: "+ p2);
 //        System.out.println("p3: "+ p3);
         ProductManager pm=new ProductManager();
-        Product p6=pm.createProduct(104,"Chocolate",BigDecimal.valueOf(2.99),Rating.FIVE_STAR);
-        Product p7=pm.createProduct(104,"Chocolate",BigDecimal.valueOf(2.99),Rating.FIVE_STAR,LocalDate.now().plusDays(2));
-        System.out.println(p6+"\n");
-        System.out.println(p7);
-        System.out.println(p6.equals(p7));
+        Product p6=pm.createProduct(104,"Chocolate",BigDecimal.valueOf(2.99),Rating.NOT_RATED);
+        pm.printProductReport();
+      p6= pm.reviewProduct(p6,Rating.FIVE_STAR,"Nice hot cup of tea");
+      pm.printProductReport();
+//        Product p7=pm.createProduct(101,"Chocolate",BigDecimal.valueOf(2.99),Rating.FIVE_STAR,LocalDate.now().plusDays(2));
+//        System.out.println(p6+"\n");
+//        System.out.println(p7);
+//        System.out.println(p6.equals(p7));
      ;
     }
 }
