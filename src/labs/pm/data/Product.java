@@ -27,7 +27,7 @@ import java.util.Objects;
 
 import static java.math.RoundingMode.HALF_UP;
 
-public sealed abstract class Product permits Drink,Food {
+public sealed abstract class Product implements Rateable<Product> permits Drink,Food {
     public static final BigDecimal DISCOUNT_RATE=BigDecimal.valueOf(0.1);
     private final int id;
     private final  String name;
@@ -95,7 +95,7 @@ public sealed abstract class Product permits Drink,Food {
     public  BigDecimal getDiscount(){
         return price.multiply(DISCOUNT_RATE).setScale(2,HALF_UP);
     }
-     public abstract  Product applyRaating(Rating newRating);
+     public abstract  Product applyRating(Rating newRating);
 
     @Override
     public String toString() {

@@ -19,6 +19,7 @@ import labs.pm.data.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Locale;
 
 public class Shop {
     public static void main(String[] args) {
@@ -28,7 +29,7 @@ public class Shop {
 //        System.out.println("p1: "+ p1);
 //        System.out.println("p2: "+ p2);
 //        System.out.println("p3: "+ p3);
-        ProductManager pm=new ProductManager();
+        ProductManager pm=new ProductManager(Locale.of("Fr"));
         Product p6=pm.createProduct(104,"Chocolate",BigDecimal.valueOf(2.99),Rating.NOT_RATED);
         pm.printProductReport();
       p6= pm.reviewProduct(p6,Rating.FIVE_STAR,"Nice hot cup of tea");

@@ -35,7 +35,9 @@ public final class Food extends Product{
     }
 
     @Override
-    public Product applyRaating(Rating newRating) {
+    public Product applyRating(Rating newRating) {
         return new Food(getId(),getName(),getPrice(),newRating,getBestBefore());
     }
+
+
 }
