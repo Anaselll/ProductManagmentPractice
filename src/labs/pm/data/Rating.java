@@ -24,7 +24,7 @@ public enum Rating {
         this.rating=rating;
     }
     private final String rating;
-    public String getRating(){
+    public String getStars(){
         return  this.rating;
     }
 }

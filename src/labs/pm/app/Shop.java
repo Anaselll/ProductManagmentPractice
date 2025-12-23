@@ -31,9 +31,14 @@ public class Shop {
 //        System.out.println("p3: "+ p3);
         ProductManager pm=new ProductManager(Locale.of("Fr"));
         Product p6=pm.createProduct(104,"Chocolate",BigDecimal.valueOf(2.99),Rating.NOT_RATED);
-        pm.printProductReport();
-      p6= pm.reviewProduct(p6,Rating.FIVE_STAR,"Nice hot cup of tea");
-      pm.printProductReport();
+        Product p7=pm.createProduct(105,"Cake",BigDecimal.valueOf(2.99),Rating.NOT_RATED);
+        pm.printProductReport(p6);
+        pm.printProductReport(p7);
+//        p6= pm.reviewProduct(p6,Rating.THREE_STAR,"Nice hot cup of tea");
+//        p6= pm.reviewProduct(p6,Rating.FOUR_STAR,"Nice hot cup");
+        pm.reviewProduct(p6,Rating.THREE_STAR,"Nice hot cup of tea");
+        pm.reviewProduct(p6,Rating.FOUR_STAR,"Nice hot cup");
+      pm.printProductReport(p6);
 //        Product p7=pm.createProduct(101,"Chocolate",BigDecimal.valueOf(2.99),Rating.FIVE_STAR,LocalDate.now().plusDays(2));
 //        System.out.println(p6+"\n");
 //        System.out.println(p7);
